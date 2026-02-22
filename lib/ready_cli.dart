@@ -40,9 +40,17 @@ void createStructure(String name) {
   final base = "$name/lib";
 
   Directory("$base/core/config").createSync(recursive: true);
-  Directory("$base/core/theme").createSync(recursive: true);
+  Directory("$base/core/components").createSync(recursive: true);
+  Directory("$base/core/constants").createSync(recursive: true);
+  Directory("$base/core/network").createSync(recursive: true);
+  Directory("$base/core/routes").createSync(recursive: true);
+  Directory("$base/core/service").createSync(recursive: true);
+  Directory("$base/core/utils").createSync(recursive: true);
   Directory("$base/features").createSync(recursive: true);
-  Directory("$base/shared").createSync(recursive: true);
+  Directory("$base/shared/controller").createSync(recursive: true);
+  Directory("$base/shared/model").createSync(recursive: true);
+  Directory("$base/shared/data").createSync(recursive: true);
+  Directory("$base/shared/view").createSync(recursive: true);
 }
 
 Future<void> addDependencies(String name) async {
