@@ -1,0 +1,12 @@
+name: ready_cli
+description: My personal Flutter project generator
+version: 0.0.1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+executables:
+  ready: ready_cli
+
+dependencies:
+  args: ^2.4.2
