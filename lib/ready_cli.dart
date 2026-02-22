@@ -29,10 +29,12 @@ Future<void> createProject(String name) async {
 
   await Process.run("flutter", ["create", name]);
 
+  print("Creating structure for Project $name!");
   createStructure(name);
+  print("Adding dependencies for Project $name!");
   await addDependencies(name);
+  print("Replacing main file for Project $name!");
   replaceMainFile(name);
-
   print("Project $name created successfully!");
 }
 
@@ -54,8 +56,16 @@ void createStructure(String name) {
 }
 
 Future<void> addDependencies(String name) async {
-  await Process.run("flutter", ["pub", "add", "flutter_riverpod"], workingDirectory: name);
-  await Process.run("flutter", ["pub", "add", "go_router"], workingDirectory: name);
+  await Process.run("flutter", [
+    "pub",
+    "add",
+    "flutter_riverpod",
+  ], workingDirectory: name);
+  await Process.run("flutter", [
+    "pub",
+    "add",
+    "go_router",
+  ], workingDirectory: name);
   await Process.run("flutter", ["pub", "add", "dio"], workingDirectory: name);
 }
 
